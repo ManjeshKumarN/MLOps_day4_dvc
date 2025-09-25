@@ -16,9 +16,13 @@ need to provide the origin for dvc to where to store the data, so that it tracke
 consider the initial data as version 1 (v1)
 12. "dvc commit" and "dvc push" to push the data to S3 ( data in .dvc/cache will be pushed to S3 - remote )
 13. commit and push all the changes to git
+
 14. now add a new row to the data using mycode.py and check "dvc status" 
 15. on checking the dvc status can see the data is changed, on "dvc commit" the the md5 id will be changed 
 15. "dvc commit" and "dvc push" to push the data to S3 , now can see the previous as well as the new one in S3 folder
  but keep in mind S3 folder will be a remote storage location, which not be tracked by git, but here we are doing in local so it is tracked
  git will track data.dvc file
 
+16. add another row to the data using mycode.py and check "dvc status"
+17. on checking the dvc status can see the data is changed, on "dvc commit" the the md5 id will be changed 
+18. "dvc commit" and "dvc push"
