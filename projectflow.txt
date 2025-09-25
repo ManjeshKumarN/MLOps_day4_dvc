@@ -1,0 +1,16 @@
+1. create repository
+2. Add mycode.py, the sample script to create a csv file and store in data folder
+3. commit and push the changes along with data
+4. pip install dvc -- to install dvc ( onl for first time )
+5. dvc init -- creates a .dvcignore file , .dvc folder
+need to provide the origin for dvc to where to store the data, so that it trackes like Azure storage, S3 etc..,
+6. mkdir s3 -- creates a s3 folder , which in this used as origin for dvc
+7. Add remote in dvc using "dvc remote add -d myremote S3" , here ideally S3 should be a remote storage location
+8. "dvc add data/" similar to adding the files to git , so the dvc tracks everything inside data/ folder
+    if need to track a respective file inside data/ folder use the full path
+9. if the files or folders tracked by git will not be tracked by dvc
+   if dvc need to track a then first it has to be untracked by git , in the example data/ folder is already tracking by git , so throws error
+   using : git rm -r --cached 'data' and git commit -m "stop tracking data"
+10. now on running "dvc add data/", th data folder is tracked by dvc and not git , and same is added automatically by dvc in .gitignore file
+11. data.dvc ( file.dvc , this file name is as per the file being tracked ) file will hold the hash for data , ".dvc/cache" hold the data
+consider the initial data as version 1 (v1)
