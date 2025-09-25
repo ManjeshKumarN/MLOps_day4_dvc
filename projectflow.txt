@@ -14,3 +14,5 @@ need to provide the origin for dvc to where to store the data, so that it tracke
 10. now on running "dvc add data/", th data folder is tracked by dvc and not git , and same is added automatically by dvc in .gitignore file
 11. data.dvc ( file.dvc , this file name is as per the file being tracked ) file will hold the hash for data , ".dvc/cache" hold the data
 consider the initial data as version 1 (v1)
+12. commit and push all the changes to git
+13. "dvc commit" and "dvc push" to push the data to S3 ( data in .dvc/cache will be pushed to S3 - remote )
