@@ -14,5 +14,11 @@ need to provide the origin for dvc to where to store the data, so that it tracke
 10. now on running "dvc add data/", th data folder is tracked by dvc and not git , and same is added automatically by dvc in .gitignore file
 11. data.dvc ( file.dvc , this file name is as per the file being tracked ) file will hold the hash for data , ".dvc/cache" hold the data
 consider the initial data as version 1 (v1)
-12. commit and push all the changes to git
-13. "dvc commit" and "dvc push" to push the data to S3 ( data in .dvc/cache will be pushed to S3 - remote )
+12. "dvc commit" and "dvc push" to push the data to S3 ( data in .dvc/cache will be pushed to S3 - remote )
+13. commit and push all the changes to git
+14. now add a new row to the data using mycode.py and check "dvc status" 
+15. on checking the dvc status can see the data is changed, on "dvc commit" the the md5 id will be changed 
+15. "dvc commit" and "dvc push" to push the data to S3 , now can see the previous as well as the new one in S3 folder
+ but keep in mind S3 folder will be a remote storage location, which not be tracked by git, but here we are doing in local so it is tracked
+ git will track data.dvc file
+
