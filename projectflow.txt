@@ -30,5 +30,8 @@ consider the initial data as version 1 (v1)
 after saving three versions of data now need to rollback to first version
     git log ( copy the hash of the first version of data )
     git checkout <hash>
-    dvc pull -- pulls the respective version of data in data.dvc ( as rollback to first version will have the firt version md5 in data.dvc) 
+    dvc pull -- pulls the respective version of data in data.dvc ( as rollback to first version will have the first version md5 in data.dvc) 
+    git checkout main -- to come to main branch again
     as soon as "dvc pull" is run will fetch the respective data related to md5 from remote stoarge 
+
+    as data/ folder is not tracked by git and only tracked by dvc, data in file inside data/ folder is not changed automatically, "dvc pull" is required
